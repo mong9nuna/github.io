@@ -1,7 +1,7 @@
 ---
 layout: page
-title: 효준
-description: '안녕하세요. 최효준입니다.'
+title: 수율
+description: '안녕하세요. 수율입니다.'
 permalink: /authors/
 sitemap:
   priority: 0.7

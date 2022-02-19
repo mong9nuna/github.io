@@ -1,12 +1,12 @@
-title: hyojun note about web
-email: chlgkwk123@nate.com
+title: exit
+email: suyul1004@naver.com
 description: |
-  웹 프로그래밍 연습장입니다.
+ 똥테마 리얼 탈출입니다.
 baseurl: ''
 
 timezone: Asia/Seoul
 
-repository: hyojun123/hyojun123.github.io
+repository: mong9nuna/mong9nuna.github.io
 
 permalink: /:year/:month/:day/:title/
 
@@ -45,11 +45,11 @@ defaults:
       layout: tag
 
 exclude: [README.md, Gemfile, Gemfile.lock]
-url: https://hyojun123.github.io
+url: https://mong9nuna.github.io
 keep_files: [assets, files]
 github: [metadata]
 # iolo's custom
-author: chlgkwk123@nate.com
+author: suyul1004@naver.com
 image: '/assets/images/default_blog_cover.jpg'
 asset_url: /assets
 #asset_url: //meta-kage.kakaocdn.net/dn/osa/blog/assets
@@ -64,4 +64,4 @@ facebook:
 #google_plus:
 #  username: kakaodev
 github_url:
-  username: hyojun123/hyojun123.github.io
+  username: mong9nuna/mong9nuna.github.io
