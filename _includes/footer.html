@@ -1,18 +1,22 @@
-<footer>
-    <div class="content">
-        <span>&copy; gridster</span>
-        <span class="backtotop">back to top</span>
-    </div>
-</footer>
-<script src="{{ site.baseurl | replace: '//', '/' }}/js/build/global.min.js"></script>
-<!-- analytics -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-50358022-5', 'auto');
-  ga('send', 'pageview');
-
-</script>
+<div id="footer" class="container-fluid">
+    <ul id="links">
+        {% if site.github_url %}
+        <li>
+            <a id="link-github" href="http://github.com/{{ site.github_url.username }}" target="_blank">
+                <span class="sr-only">github</span>
+            </a>
+        </li>
+        {% endif %}
+        {% if site.facebook %}
+        <li>
+            <a id="link-facebook" href="http://facebook.com/{{ site.facebook.username }}" target="_blank">
+                <span class="sr-only">facebook</span>
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+    <p id="copyright">
+        <a href="//beam307.github.io/">Copyright &copy; HyoJun Corp.</a>
+        All rights reserved.
+    </p>
+</div><!--#footer-->

@@ -1,7 +1,54 @@
-<div class="row">
-    <a href="{{ site.baseurl | replace: '//', '/' }}/" class="logo noline">
-        {% include full.html %}
-        {% include logo.html %}
-        {% include icon.html %}
+   <form id="frm">
+       <input type="hidden" id="pageName" name="pageName">
+   </form>
+   <div id="header">
+    <button id="menu-toggle" type="button">
+        <span class="sr-only">Toggle Navigation Menu</span>
+    </button>
+    <button id="search-toggle" type="button">
+        <span class="sr-only">Toggle Search Form</span>
+    </button>
+    <a id="logo" href="/">
+        <span class="sr-only">최효준 블로그</span>
     </a>
+    <div id="search">
+        <input id="search-input" type="search" placeholder="Search..." value="" />
+    </div>
+    <ul class="search__results" id="results-container"></ul>
+
+    <ul id="menu" class="nav">
+        <li class="{% if page.url != '/tags/' and page.url != '/tags/with/' and page.url != '/tags/bookdream/' and page.url != '/tags/spring/' and page.url != '/tags/daily/' and page.url != '/tags/java/' and page.url != '/tags/javascript/' and page.url != '/tags/egov/'%} active {% endif %}"><a href="{{ base_path }}/">전체보기</a></li> <!-- 태그추가되면 추가 -->
+        <li class="{% if page.url == '/tags/with/' %} active {% endif %}"><a href="{{ base_path }}/tags/with/">with율</a></li>
+        <li class="{% if page.url == '/tags/bookdream/' %} active {% endif %}"><a href="{{ base_path }}/tags/linux/">리눅스</a></li>
+        <li class="{% if page.url == '/tags/spring/' %} active {% endif %}"><a href="{{ base_path }}/tags/spring/">스프링</a></li>
+        <li class="{% if page.url == '/tags/daily/' %} active {% endif %}"><a href="{{ base_path }}/tags/daily/">일기</a></li>
+        <li class="{% if page.url == '/tags/java/' %} active {% endif %}"><a href="{{ base_path }}/tags/java/">자바</a></li>
+        <li class="{% if page.url == '/tags/javascript/' %} active {% endif %}"><a href="{{ base_path }}/tags/javascript/">자바스크립트</a></li>
+        <li class="{% if page.url == '/tags/egov/' %} active {% endif %}"><a href="{{ base_path }}/tags/egov/">전자정부프레임워크</a></li>
+        <li class="{% if page.url == '/tags/react/' %} active {% endif %}"><a href="{{ base_path }}/tags/react/">리액트</a></li>
+        <li class="{% if page.url == '/tags/basic/' %} active {% endif %}"><a href="{{ base_path }}/tags/basic/">개발 외</a></li>
+        <li class="{% if page.url == '/tags/' %} active {% endif %}"><a href="{{ base_path }}/tags/">카테고리</a></li>
+    </ul>
 </div>
+<!-- Script pointing to jekyll-search.js -->
+<script src="{{site.baseurl}}/dest/jekyll-search.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '{{ site.baseurl }}/search2.json',
+        searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+        noResultsText: '<li>No results found</li>',
+        limit: 15,
+        fuzzy: false,
+        exclude: ['Welcome']
+    })
+</script><!-- #header -->
+<script>
+    $(document).ready(function() {
+        $('li').click(function() {
+            $(this).addClass('active');
+        })
+    })
+</script>
